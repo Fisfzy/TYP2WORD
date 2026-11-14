@@ -123,8 +123,8 @@ $PY scripts/verify.py build/out.docx --manifest build/filled.json \
 3. **图片按原始尺寸铺** → 比版心还高，于是"图注在上一页、图在下一页"。
    `layout_figures()` 把超过版心 92% 的图等比缩下来，并给图注打开 `keep_with_next`。
 4. **文件沙箱让 Word 建不了工作文件** → 弹一个隐藏的模态框，COM 调用**永久挂住**
-   （不是报错，是卡死）。`doctor.py` 的 Word 冒烟测试用线程 + 超时把这件事在 5 秒内
-   说出来，必要时点掉模态框。
+   （不是报错，是卡死）。`doctor.py` 的 Word 冒烟测试用线程 + 超时（默认 60s）把这件事说出来，
+   并试着点掉那个看不见的模态框。
 
 ## 交付前只认这几条
 
